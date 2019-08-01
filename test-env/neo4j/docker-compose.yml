@@ -1,0 +1,11 @@
+version: '3'
+services:
+  neo4j:
+    image: neo4j:3.5.7
+    restart: always
+    ports:
+      - 7474:7474
+      - 7687:7687
+    environment:
+      - NEO4J_dbms_memory_heap_maxSize=1G
+      - NEO4J_AUTH=neo4j/uc2019  #修改默认用户密码
