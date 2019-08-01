@@ -3,7 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-    <groupId>me.uc</groupId>
+	<modules>
+		<module>uc-showcase</module>
+		<module>uc-config-center</module>
+		<module>uc-data-es</module>
+		<module>uc-starter</module>
+		<module>uc-common</module>
+		<module>uc-register-center</module>
+		<module>uc-visual</module>
+	</modules>
+	<groupId>me.uc</groupId>
     <artifactId>one-platform</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>one-platform</name>
@@ -22,6 +31,7 @@
         <java.version>1.8</java.version>
         <spring-boot.version>2.0.9.RELEASE</spring-boot.version>
         <spring-cloud.version>Finchley.SR2</spring-cloud.version>
+		<apollo-client.version>1.4.0</apollo-client.version>
     </properties>
 
     <dependencies>
@@ -39,7 +49,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <scope>provided</scope>
+			<optional>true</optional>
         </dependency>
 
         <dependency>
@@ -53,7 +63,7 @@
         <dependencies>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
+				<artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -65,14 +75,31 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+			<dependency>
+				<groupId>com.ctrip.framework.apollo</groupId>
+				<artifactId>apollo-client</artifactId>
+				<version>${apollo-client.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-starter-server</artifactId>
+				<version>2.0.5</version>
+			</dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${spring-boot.version}</version>
             </plugin>
         </plugins>
     </build>
