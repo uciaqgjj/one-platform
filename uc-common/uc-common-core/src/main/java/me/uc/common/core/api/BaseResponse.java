@@ -9,10 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BaseResponse {
-	private String message;
+public class BaseResponse<T> {
 	@Builder.Default
 	private ResultCode code = ResultCode.SUCCESS;
+
+	private String message;
+
+	private T data;
 
 	public boolean isSuccess() {
 		return code == ResultCode.SUCCESS;

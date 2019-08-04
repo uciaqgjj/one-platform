@@ -16,4 +16,8 @@ public class BaseResponseTest {
 		log.info(resp.toString());
 	}
 
+	@Test
+	public void testListResponse() {
+
+	}
 }

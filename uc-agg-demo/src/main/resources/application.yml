@@ -1,8 +1,8 @@
 server:
-  port: 9001
+  port: 9500
 spring:
   application:
-    name: data-es
+    name: agg-demo
 
 eureka:
   client:

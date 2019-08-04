@@ -1,4 +1,4 @@
-package me.uc.data.es.controller;
+package me.uc.agg.demo.web;
 
 import me.uc.common.core.api.BaseResponse;
 import me.uc.common.core.api.ResultCode;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author uc
  * @description TODO
- * @date 2019/8/2
+ * @date 2019/8/5
  */
 @RestController
 @RequestMapping("test")
@@ -18,18 +18,11 @@ public class TestController {
 
 	@GetMapping("echo")
 	public String echo() {
-		return "data-es";
+		return "agg-demo";
 	}
 
 	@GetMapping("testMissingParameter")
 	public BaseResponse testMissingParameter(@RequestParam("msg") String msg) {
 		return BaseResponse.builder().code(ResultCode.PARAM_MISS).build();
 	}
-
-	@GetMapping("testResponse")
-	public BaseResponse<String> testResponse() {
-		return BaseResponse.<String>builder().data("hello").build();
-	}
-
-
 }

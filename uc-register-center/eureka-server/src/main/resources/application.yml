@@ -14,4 +14,4 @@ eureka:
     # 不使用缓存
     use-read-only-response-cache: false
     # 调整evit周期
-    eviction-interval-timer-in-ms: 1000
+    eviction-interval-timer-in-ms: 5000

@@ -1,0 +1,29 @@
+version: "3"
+services: 
+  es:
+    image: elasticsearch:5.6.16-alpine
+    environment:
+      - "discovery.type=single-node"
+    volumes:
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports: 
+      - 9200:9200
+      - 9300:9300
+  kibana:
+    image: kibana:5.6.16
+    environment: 
+      - ELASTICSEARCH_URL=http://es:9200
+    ports: 
+      - 5601:5601
+  es-head: 
+    image: mobz/elasticsearch-head:5-alpine
+    ports: 
+      - 9100:9100
+  es-cerebro:
+    image: lmenezes/cerebro
+    ports:
+      - 9101:9000

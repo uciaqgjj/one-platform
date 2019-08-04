@@ -11,6 +11,8 @@
 		<module>uc-common</module>
 		<module>uc-register-center</module>
 		<module>uc-visual</module>
+		<module>uc-starter-web</module>
+		<module>uc-agg-demo</module>
 	</modules>
 	<groupId>me.uc</groupId>
     <artifactId>one-platform</artifactId>
