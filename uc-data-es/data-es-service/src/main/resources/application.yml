@@ -22,3 +22,5 @@ management:
 
 logging:
   path: logs/${spring.application.name}-${server.port}
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG

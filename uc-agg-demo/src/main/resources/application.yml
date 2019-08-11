@@ -1,5 +1,6 @@
 server:
   port: 9500
+
 spring:
   application:
     name: agg-demo
@@ -22,3 +23,13 @@ management:
 
 logging:
   path: logs/${spring.application.name}-${server.port}
+  level:
+    me.uc: DEBUG
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+
+feign:
+  client:
+    config:
+      data-es:
+        loggerLevel: FULL
+

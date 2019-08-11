@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @date 2019/8/5
  */
 @SpringBootApplication
-@EnableFeignClients(clients = {DataEsClient.class})
+@EnableFeignClients("me.uc")
 public class AggDemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AggDemoApplication.class);

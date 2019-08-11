@@ -1,2 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  me.uc.web.component.GlobelExceptionResolver
+  me.uc.web.component.GlobelExceptionResolver,\
+  me.uc.web.log.RequestLogConfiguration,\
+  me.uc.web.feign.BizFeignConfiguration

@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  uc-kafka:
+    image: uc/centos-ssh-java
+    hostname: kafka-node
+    ports:
+      - "22:22"
+      - "9092:9092"
+      - "9093:9093"
+      - "9094:9094"
+      - "2181:2181"
+    volumes:
+      - c:/wkzone/kafka/pkg:/root/pkg
+    environment:
+      - TZ=Asia/Shanghai
